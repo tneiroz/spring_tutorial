@@ -13,7 +13,7 @@ public class RootConfig {
 	public MessageSource messageSource() {
 		ReloadableResourceBundleMessageSource source
 			= new ReloadableResourceBundleMessageSource();
-		source.setBasenames("classpath:/message/message");
+		source.setBasenames("classpath:/message/message","classpath:/message/errors");
 		source.setDefaultEncoding("utf-8");
 		return source;
 			

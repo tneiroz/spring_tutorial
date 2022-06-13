@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="register" method="post">
-	제목: <input type="text" name = "title"> <br>
+<form:form action="register" modelAttribute="board">
+	제목: <form:input type="text" path="title"/> 
+	<form:errors path="title" class="error"/><br>
 	내용: <br> 
-	<textarea rows="30" cols="50" name="content"></textarea><br>
-	작성자:<input type="text" name = "writer"> <br>
+	<form:textarea rows="30" cols="50" path="content"/><br>
+	작성자:<form:input type="text" path = "writer"/> <br>
 	<button>등록</button>
-</form>
+</form:form>
+
 </body>
+<style>
+.error{color:red; font-size:13px;}
+</style>
 </html>
