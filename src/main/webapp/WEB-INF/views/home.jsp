@@ -8,6 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+	<a href="?lang=ko">한국어</a>
+	<a href="?lang=en">영어</a>
+</div>
 <spring:message code="board.bno"/> <br>
 <spring:message code="board.title"/> <br>
 <spring:message code="board.content"/> <br>

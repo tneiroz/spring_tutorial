@@ -10,5 +10,11 @@ public class HomeCotroller {
 		public String home() {
 			return "home";
 		}
+		
+		@GetMapping("/admin/list")
+		public String test() {
+			System.out.println("컨트롤러 실행 : Admin");
+			return "admin";
+		}
 	}
 
