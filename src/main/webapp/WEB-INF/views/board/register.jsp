@@ -14,6 +14,8 @@
 	내용: <br> 
 	<form:textarea rows="30" cols="50" path="content"/><br>
 	작성자:<form:input type="text" path = "writer"/> <br>
+	<form:errors path="writer"/>
+	<br>
 	<button>등록</button>
 </form:form>
 
