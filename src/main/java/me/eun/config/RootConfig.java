@@ -19,6 +19,7 @@ public class RootConfig {
 			
 	}
 	
+	//locale은 다국어 처리를 위함
 	@Bean
 	public SessionLocaleResolver localeResolver() {
 		return new SessionLocaleResolver();
