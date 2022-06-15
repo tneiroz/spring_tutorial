@@ -20,7 +20,7 @@ import me.eun.common.FieldMatch;
 
 public class Member {
 
-	private Long id;
+	private Long id; // 회원번호
 	
 	//@Size (min=2 , max=5 , message = "이름은 한글 또는 영어 2~5글자이어야 합니다.")
 	@Pattern (regexp = "^[가-힣|a-z|A-Z]{2,5}$")
