@@ -10,5 +10,23 @@
   
  <select id="get" resultType="me.eun.model.Member">
  		select*from member_tbl where id = #{id}
- </select>
+ </select>	
+ <insert id="insert">
+ 	insert into member_tbl(userName,email,`password`)
+ 	values(#{userName},#{email},#{password});
+ 	<selectKey keyProperty="id" order="AFTER" resultType="long">
+			select last_insert_id();
+		</selectKey>
+ </insert>
+ <update id="update">
+ 	update member_tbl set
+ 	userName=#{userName},
+ 	email=#{email},
+ 	password=#{password}
+ 	where id = #{id}
+ </update>
+<delete id="delete">
+		delete from member_tbl where id = #{id}
+	</delete>
+	
 </mapper>
