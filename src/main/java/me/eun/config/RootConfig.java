@@ -17,6 +17,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
 @MapperScan("me.eun.mapper")
+@ComponentScan("me.eun")
 public class RootConfig {
 	
 	@Bean
