@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import me.eun.model.Member;
 import me.eun.service.MemberService;
+import me.eun.service.MemberServiceImpl;
 
 @Controller
 @RequestMapping("/member")
 public class MemberController { 
 	
 	@Autowired
-	MemberService service; 
+	MemberServiceImpl service; 
 	
 	@GetMapping("/success")
 	public String success() {
@@ -46,6 +47,16 @@ public class MemberController {
 		if(errors.hasErrors()) {
 			return "member/register";
 		}
-		return "redirect:success";
+		service.insert(member);
+		
+		return "redirect:list";
+	}
+	
+	
+	@GetMapping("/get")
+	public String get(Long id, Model model) {
+		Member member1 = service.findById(id);
+		model.addAttribute("member", member1);
+		return "member/get";
 	}
 }

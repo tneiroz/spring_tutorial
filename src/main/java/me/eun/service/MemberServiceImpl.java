@@ -19,4 +19,24 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.getList();
 	}
 
+	@Override
+	public Member findById(Long id) {
+		return mapper.get(id);
+	}
+
+	@Override
+	public void insert(Member member) {
+		mapper.insert(member);
+			}
+
+	@Override
+	public void update(Member member) {
+		mapper.update(member);
+	}
+
+	@Override
+	public void delete(Long id) {
+		mapper.delete(id);
+	}
+
 }

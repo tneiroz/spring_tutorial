@@ -16,12 +16,20 @@
 	</tr>
 	<c:forEach items="${memberlist}" var = "m">
 	<tr>
-			<td>${m.id}</td>
+			<td>
+			<a href="get?id=${m.id}" class="get">${m.id}</a>
+			</td>
 			<td>${m.userName}</td>
 			<td>${m.email}</td>
 			<td>${m.password}</td>
-	
+			
 	</tr>
+	
 	</c:forEach>
 </table>
+<div>
+<a href="register" class="btn btn-info">회원가입</a>
+</div>
+
+<%@ include file="../layout/footer.jsp" %>
 </div>
